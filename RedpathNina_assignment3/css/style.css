@@ -1,0 +1,57 @@
+
+/* the following 7 lines are taken from studio 6 */
+.axis path,
+.axis line {
+  padding-left: 40px;
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+body{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(247, 218, 175);
+}
+
+.area {
+    opacity: 0.5;
+    clip-path: url(#clip);
+  }
+
+h1{
+    padding-top: 30px;
+    font-family: "Papyrus";
+    font-size: 42px;
+}
+
+h4{
+    font-family: "Papyrus";
+}
+h5{    font-family: "Papyrus";
+}
+
+#sentiment-chart{
+    padding-left: 25%;
+}
+
+.chart-content{
+    color: #575151;
+    opacity: .5;
+    border-radius: .5;
+}
+
+p{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: "Papyrus";
+    font-size: 12px;
+}
+
+.currentStory{
+    filter: opacity(40%); 
+
+}
+
+.brightness { filter: brightness(0.25); }

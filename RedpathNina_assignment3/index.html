@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairy Tale Word Analysis</title>
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<script src="js/d3.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<div>
+
+<h1>Fairy Tale Sentiment Over Time</h1>
+<h4>By Nina Redpath</h4>
+<h5>Student ID: 458234</h5>
+<h5>Wustl Email: ninaredpath@wustl.edu</h5>
+
+<p>This page shows the sentiment of 6 fairy tales over time. The goal is to see if there is any consistent story arc pattern between tales and to compare each stories sentiment to one another. The analysis is done by scoring words in the story and then plotting them according to the time index at which they occur in the fairytale. You can click on the book icon associated with each story to see its sentiment graph, or click "compare all" to see a stacked chart. </p>
+<br>
+<div id="selection-chart">
+</div>
+
+<div id="sentiment-chart">
+</div>
+
+<br><br>
+</div>
+
+
+
+
+
+<script type="application/javascript" src="js/sentimentChart.js"></script>
+<script type="application/javascript" src="js/selectionChart.js"></script>
+<script type="application/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="test_files/labels.json"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+
+</body>
+
+</html>
