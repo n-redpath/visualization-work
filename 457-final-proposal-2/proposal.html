@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>457 Final Project Proposal</title>
+</head>
+<body>
+    <h1>457 Final Project Proposal</h1>
+    <h3>Project Title: So You Wanna Live Here?</h3>
+    <h4>Authors: </h4>
+    <h4>Amee Rothman, arothman@wustl.edu, 475030
+    </h4>
+    <h4>Mia Collymore Abbas, mcollymoreabbas@wustl.edu, 473645</h4>
+    <h4>Nina Redpath, ninaredpath@wustl.edu, 458234
+    </h4>
+<hr>
+<h5>Background and Motivation</h5>
+<p>Oftentimes, climate change data is simply informational rather than actionable, thus we wanted to put a more applicable 
+    spin on presenting this data that will encourage and inform viewers on how to take action. As soon-to-be college graduates, 
+    geographical location is hot on our minds and there are tradeoffs to anywhere you choose to live. This map is a tool for people 
+    who are moving and want to know how prone their new location is to natural disasters. We also want to acknowledge the fact that 
+    certain geographical regions are neglected in terms of infrastructure and struggle to rebuild after a disaster, which is another factor to think about. 
+    We want to display the increasing number of natural disasters as a result of climate change, 
+    and acknowledge the impact that they have had on communities all over the country.
+</p>   
+
+
+
+<h5>Project Objectives</h5>
+<p>The primary question we are trying to answer with this visualization is whether or 
+    not an area is safe to live in, in terms of the frequency of natural disasters. 
+    Many areas have become hot spots for fires, tornados, hurricanes and floods. Some 
+    people moving to these locations may be unaware of these environmental factors, and 
+    invest in high risk properties, or move their families to unsafe locations. We want 
+    to create a tool that allows people to see the climate risks of towns and counties so 
+    that they can be better informed on what houses to rent or buy. 
+</p>
+
+<h5>Data</h5>
+<p>Derived from FEMA (Federal Emergency Management Agency)
+</p>
+<a href="https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2">View the data here.</a>
+
+
+<h5>Data Processing</h5>
+<p>Quantities deriving from dataset:
+</p>
+<ul>
+    <li>    femaDeclarationString: Agency standard method for uniquely identifying Stafford Act declarations - Concatenation of declaration type, disaster number and state code. Ex: DR-4393-NC
+    </li>
+    <li>
+        state: The name or phrase describing the U.S. state, district, or territory
+    </li>
+    <li>
+        incidentType: Type of incident such as fire or flood.
+    </li>
+    <li>
+        declarationTitle: Title for the disaster
+    </li>
+    <li>
+        hmProgramDeclared: Denotes whether the Hazard Mitigation program was declared for this disaster. For more information on the program, please visit https://www.fema.gov/grants/mitigation/hazard-mitigation
+    </li>
+    <li>
+        incidentBeginDate: Date the incident itself began 
+    </li>
+    <li>
+        incidentEndDate: Date the incident itself ended
+    </li>
+    <li>
+        fipsCountyCode: FIPS three-digit numeric code used to identify counties and county equivalents in the United States, the District of Columbia, US territories, outlying areas of the US and freely associated states
+    </li>
+</ul>
+
+<h5>Visualization Design</h5>
+<p>The first three sketches are our individual visions of what our page should look like, while the last mockup (made with figma) is the combined design that we have agreed on.</p>
+<p>Mia's draft:</p>
+<img src="miadraft.png" alt="mias draft" style="width: 500px; margin-left:200px; transform:rotate(90deg);">
+<p>Nina's draft</p>
+<img src="ninadraft.png" alt="ninas draft" style="width: 500px; margin-left:200px; transform:rotate(90deg);">
+<p>Amee's draft</p>
+<img src="ameedraft.png" alt="amees draft" style="width: 500px; margin-left:200px; transform:rotate(90deg);">
+<p>Final draft: </p>
+<img src="final.jpeg" alt="final draft">
+
+
+
+<h5>Must-Have Features</h5>
+<ul>
+    <li>A map with indicators of type and frequency of natural disasters by location. 
+    </li>
+    <li>
+        A search bar to find stats about a specific location 
+    </li>
+    <li>
+        A popup that shows natural disaster stats about a specific location. 
+    </li>
+    <li>
+        Brushing to see the danger levels over time on the map. 
+    </li>
+</ul>
+
+<h5>Optional Features</h5>
+
+<ul>
+    <li>
+        Play button to see an animation of the disaster statistics over time on the map. 
+    </li>
+    <li>
+        Brushing by hovering over locations on the map. 
+    </li>
+    <li>
+        More detailed information about rebuild efforts and infrastructure. 
+    </li>
+</ul>
+
+<h5>Project Schedule</h5>
+
+<table>
+    <tr>
+    <th>Week</th>
+    <th>Goals</th>
+    </tr>
+
+    <tr>
+        <td>Week 1: </td>
+        <td>Create page and import and parse data. 
+            Design repository/code structure. 
+            
+            </td>
+    </tr>
+
+    <tr>
+        <td>Week 2: </td>
+        <td>Create initial map and user flow in the webpage.
+        </td>
+    </tr>
+
+    <tr>
+        <td>Week 3: </td>
+        <td>Add data to map. Finalize how to display the data on the map design-wise. 
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>Week 4: </td>
+        <td>Add search functionality and popup. 
+        </td>
+    </tr>
+
+    <tr>
+        <td>Week 5: </td>
+        <td>Add brushing over time, and improve overall design and experience. 
+        </td>
+    </tr>
+
+    <tr>
+        <td>Week 6: </td>
+        <td>Improve design and usability, fix bugs. Assess feasibility of optional features. 
+        </td>
+    </tr>
+
+
+
+</table>
+
+</body>
+</html>
