@@ -1,0 +1,19 @@
+.body{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+#grid{
+    padding-left: 30%;
+    padding-top: 10%;
+}
+
+.highlighted {
+    opacity: 1.6;
+}
+
+.seethru{
+    opacity: 0.55;
+}

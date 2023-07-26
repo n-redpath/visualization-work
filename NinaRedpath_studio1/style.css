@@ -1,0 +1,31 @@
+#content{
+    padding: 1%;
+    align-content: center;
+}
+
+h1{
+    color: darkgreen;
+    font-style: italic;
+    margin: 30px;
+}
+.btn{
+    background-color: lightpink;
+}
+
+/* overriding bootstrap */
+#cse457-basics{
+    color: lemonchiffon;
+    padding: 30px;
+}
+
+#content p{
+    font-weight: bold;
+    color: darkslategrey;
+}
+
+a:hover{
+    color: magenta;
+}
+
+
+
