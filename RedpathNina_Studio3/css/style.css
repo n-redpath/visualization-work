@@ -1,0 +1,10 @@
+.city-label{
+    font-size: 14px;
+    text-anchor: middle;
+}
+body{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: azure;
+}
