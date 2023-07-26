@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <!-- The following  (up to line 20) is taken from the anyCharts documentation -->
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/v8/themes/light_blue.min.js"></script>
+      <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+      <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+      <style type="text/css">
+    
+        html,
+        body,
+        #container {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        #intro{
+          align-content: center;
+          text-align: center;
+          color: rgb(69, 75, 80);
+          padding: 20px;
+        }
+        p{
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        img{
+          outline: 1px solid slategrey;
+        }
+      
+    </style>
+    </head>
+    <body>
+      <div id="intro">
+      <h1>Good and Bad Visualizations</h1>
+      <h5>By Nina Redpath</h5>
+      <hr>
+      <h4>A Good Visualization: </h4>
+      <p>One effective visualization that I found was on the Nasa Website. <span><a href="https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE">This Visualization (from an external site) </a></span> shows the distribution and the severity of wildfires 
+    throughout the world. The visualization is easy to understand, with a clear legend at the bottom indicating that the darker the color, the faster the fire was burning through the forest. 
+it also gives a timescale of 2 years, and one can either play through and see the fires changing month by month, or pick one specific month and only look at the fires during that time. 
+ </p>
+ <p>While the graph could be more engaging by allowing users to zoom in on different parts of the world, it is still easy to understand and effective in communicating how disastrous fires can be to our forests. There is no unecessary information or confusing visuals.</p>
+
+ <br>
+ <h4>A Bad Visualization</h4>
+ <img src="badvis.jpg" alt="bad-visualization">
+ <p>The graph above is a bad visualization because it is attempting to relay too much information in a way that is confusing for a reader. 
+   I believe that the main message of this visualization is to relay the themes most common among award winning books. However, on first glance this graph seems meaningless and messy. The title and description of content is 
+   separate from the visuals, and the title sheds no light on the subject, which makes a reader have to do extra work to understand the context. 
+   the graph also includes both the title of each book related to a theme, as well as a photo of the cover which seems irrelevant. 
+   while this graph uses a creative format, the books are so far away from the titles that they relate to that it is overly confusing. There are too many 
+   lines that make the image messy. Lastly, the way that the themes are organized seems to be in no particular order, which makes a reader have to do extra work 
+   to understand which themes are more or less common. 
+ </p>
+
+ <h4>My Recreation</h4>
+ <p>For my recreation I decided to make a donute chart that initially only shows the popular themes. You can hover over each section to see titles. Additionally, once you hover 
+   over the subject a tooltip will become visible that lists exactly how many of the award winning books have that theme. I still think that this graph contains too much information. 
+   I thought about removing all themes that only related to one book, but decided to keep the visualization close to what the initial artist was trying to relay. I 
+   did however remove the images of the books and specific titles entirely, as I felt it was overly complicated.
+ <br><br>
+</div>  
+ <div id="container"></div>
+      
+    
+      <script>
+    // NOTE that the following javascript is copied from the anyChart documentation and edited to the data that i used. 
+    // https://www.anychart.com/products/anychart/gallery/Pie_and_Donut_Charts/Donut_Chart_with_Geo_Map_as_Center_Content.php?theme=lightBlue 
+        anychart.onDocumentReady(function () {
+        // set chart theme
+          // create pie chart with passed data
+          var data = [
+          {x: "Death", value: 13},
+          {x: "Love", value: 6},
+          {x: "Unlikely Frienships", value: 5},
+          {x: "Corruption and Theft", value: 5},
+          {x: "Betrayal", value: 5},
+          {x: "War", value: 4},
+          {x: "A Mysterious Letter", value: 3},
+          {x: "Criminal Gangs", value: 3},
+          {x: "Suicide", value: 3},
+          {x: "Running Away", value: 3},
+          {x: "East London", value: 2},
+          {x: "School Days", value: 2},
+          {x: "Horniness", value: 2},
+          {x: "Cannibalism", value: 1},
+          {x: "Biological Terrorism'", value: 1},
+          {x: "Escaped Tiger", value: 1},
+          {x: "Totalitarian Bucharest", value: 1},
+          {x: "Homicidal Cowboy Brothers", value: 1},
+          {x: "Nanny Trust Issues", value: 1},
+          {x: "Jazz", value: 1},    
+          ];
+    
+          var chart = anychart.pie(data);
+
+
+        chart.radius('78%');
+        chart.innerRadius("35%");
+
+        chart.labels().format("{%x}");
+        chart.labels().fontSize(10);
+
+    	chart.legend(false);
+    
+          // set outline settings
+          chart
+            .width('100%')
+            .fill(function () {
+              return anychart.color.darken(this.sourceColor, 0);
+            });
+    
+          // format tooltip
+          chart.tooltip().format('Number of with this theme: {%value} \n');
+    
+          // create standalone label and set label settings
+          var label = anychart.standalones.label();
+          label
+            .enabled(true)
+            .text('Award Winning Book Themes')
+            .width('100%')
+            .height('100%')
+            .adjustFontSize(true, true)
+            .minFontSize(10)
+            .maxFontSize(25)
+            .fontColor('#60727b')
+            .position('center')
+            .anchor('center')
+            .hAlign('center')
+            .vAlign('middle');
+    
+          // set label to center content of chart
+          chart.center().content(label);
+    
+          // set container id for the chart
+          chart.container('container');
+          // initiate chart drawing
+          chart.draw();
+        });
+      
+    </script>
+    </body>
+    </html>
+                      

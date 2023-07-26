@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 1B</title>
+    <style>
+        .barChart {
+            fill: steelblue;
+            stroke: darkgray;
+            stroke-width: 1px;
+        }
+
+        .barChart rect:hover {
+            fill: seagreen;
+        }
+
+        .lines {
+            stroke: steelblue;
+            fill: none
+        }
+
+        .areas {
+            stroke: none;
+            fill: steelblue
+        }
+
+        circle {
+            fill: steelblue;
+        }
+
+        .frame {
+            fill: none;
+            stroke: black;
+            stroke-width: 2px;
+        }
+
+        /* Styles that clean up the layout;
+         * you can ignore these */
+        div {
+            display: inline-block;
+            border: 1px solid lightgray;
+            margin: 1em;
+        }
+
+        div, span {
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+<body>
+
+<h3>CSE 457 Assignment 1B</h3>
+<span>by Nina Redpath</span>
+<span>ninaredpath@wustl.edu</span>
+<span>458234</span>
+
+<br/>
+<hr/>
+<br/>
+
+<span>
+    <button id="staircase-button">Staircase</button>
+</span>
+
+<span>
+    <label>Dataset:</label>
+    <select id="dataset">
+        <option value="anscombe_I">Anscombe's Quartet I</option>
+        <option selected value="anscombe_II">Anscombe's Quartet II</option>
+        <option value="anscombe_III">Anscombe's Quartet III</option>
+        <option value="anscombe_IV">Anscombe's Quartet IV</option>
+    </select>
+</span>
+
+<span>
+    <input type="checkbox" id="random"> Random Subset
+</span>
+
+<br/>
+
+<div>
+    <h2>Bar Charts</h2>
+    <svg id="firstchart" viewBox="0 0 15 15" version="1.1" height="200">
+        <rect transform="translate(0,10)" width = "10" height="1"></rect>
+        <rect transform="translate(0,9)" width = "8" height="1"></rect>  
+        <rect transform="translate(0,8)" width = "13" height="1"></rect>  
+        <rect transform="translate(0,7)" width = "9" height="1"></rect>  
+        <rect transform="translate(0,6)" width = "11" height="1"></rect>  
+        <rect transform="translate(0,5)" width = "14" height="1"></rect>  
+        <rect transform="translate(0,4)" width = "6" height="1"></rect>  
+        <rect transform="translate(0,3)" width = "4" height="1"></rect> 
+        <rect transform="translate(0,2)" width = "12" height="1"></rect>  
+        <rect transform="translate(0,1)" width = "7" height="1"></rect>  
+        <rect transform="translate(0,0)" width = "5" height="1"></rect>  
+    </svg>
+
+    <svg id="secondchart" viewBox="0 0 15 15" version="1.1" height="200">
+        <rect transform="translate(0,10)" width = "8.04" height="1"></rect>
+        <rect transform="translate(0,9)" width = "6.95" height="1"></rect>  
+        <rect transform="translate(0,8)" width = "7.58" height="1"></rect>  
+        <rect transform="translate(0,7)" width = "8.81" height="1"></rect>  
+        <rect transform="translate(0,6)" width = "8.33" height="1"></rect>  
+        <rect transform="translate(0,5)" width = "9.96" height="1"></rect>  
+        <rect transform="translate(0,4)" width = "7.24" height="1"></rect>  
+        <rect transform="translate(0,3)" width = "4.26" height="1"></rect> 
+        <rect transform="translate(0,2)" width = "10.84" height="1"></rect>  
+        <rect transform="translate(0,1)" width = "4.82" height="1"></rect>  
+        <rect transform="translate(0,0)" width = "5.68" height="1"></rect>  
+    </svg>
+</div>
+
+<div>
+    <h2>Line Charts</h2>
+
+    <svg viewBox="0 0 30 30" height="200">
+        <!-- axis (scale: 20) -->
+        <path class ="axis" d="M0 0 L0 20 L20 20" stroke="black" fill="transparent"/>
+        <!-- <text x="0" y="21">0</text> -->
+        <!-- Data -->
+        <path id="aline" d="M0 10 L1 12 L2 7 L3 11 L4 9 L5 6 L6 14 L7 16 L8 8 L9 13 L10 15" stroke="black" fill= "transparent"/>
+      </svg>
+      
+
+      <svg viewBox="0 0 30 30" height="200">
+        <!-- axes (scale: 20) -->
+        <path class ="axis" d="M0 0 L0 20 L20 20" stroke="black" fill="transparent"/>
+        <!-- data -->
+        <path id="bline" d="M0 11.96 L1 13.05 L2 12.42 L3 11.19 L4 11.67 L5 10.04 L6 12.76 L7 15.74 L8 9.16 L9 15.18 L10 14.32" stroke="black" fill= "transparent"/>
+
+  </svg>
+
+</div>
+
+<div>
+    <h2>Area Charts</h2>
+
+    <svg viewBox="0 0 40 40" height="200">
+        <!-- Axes (scale: 20x30) -->
+        <path d="M0 0 L0 30 L20 30" fill="transparent" stroke="black"/>
+        <!-- <text x="0" y="31">0</text> -->
+        <!-- Data -->
+        <path id="aarea" d="M0 30 L0 20 L1 22 L2 17 L3 21 L4 19 L5 16 L6 24 L7 26 L8 18 L9 23 L10 25 L10 30 Z" stroke="black"/>
+    </svg>
+
+
+    <svg viewBox="0 0 40 40" height="200">
+        <path d="M0 0 L0 30 L20 30" fill="transparent" stroke="black"/>
+        <!-- <text x="0" y="31">0</text> -->
+        <!-- Data -->
+        <path id="barea" d="M0 30 L0 21.96 L2 23.05 L3 22.42 L4 21.19 L5 21.67 L6 20.04 L7 22.76 L8 25.74 L9 19.16 L10 25.18 L11 24.32 L11 30 Z" stroke="black"/>
+      </svg>
+</div>
+
+<div >
+    <h2>Scatterplot</h2>
+
+    <svg id="scatterplot" viewBox="0 0 30 30" height="200" fill="transparent">
+        <!-- Frame:  -->
+        <path d="M0 0 L0 30 L30 30 L30 0 Z" stroke="black"/>
+        <!-- this graph is on a 30 scale axis. -->
+        <circle cx="10" cy="21.96" r="0.5"></circle>
+        <circle cx="8" cy="23.05" r="0.5"></circle>
+        <circle cx="13" cy="22.42" r="0.5"></circle>
+        <circle cx="9" cy="21.19" r="0.5"></circle>
+        <circle cx="11" cy="21.67" r="0.5"></circle>
+        <circle cx="14" cy="20.04" r="0.5"></circle>
+        <circle cx="6" cy="22.76" r="0.5"></circle>
+        <circle cx="4" cy="25.74" r="0.5"></circle>
+        <circle cx="12" cy="19.16" r="0.5"></circle>
+        <circle cx="7" cy="25.18" r="0.5"></circle>
+        <circle cx="5" cy="24.32" r="0.5"></circle>        
+      </svg>
+
+</div>
+
+<script src="/script.js"></script>
+<script src="d3.min.js"></script>
+</body>
+</html>

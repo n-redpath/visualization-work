@@ -1,0 +1,46 @@
+body{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+svg{
+    width: 50%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+rect{
+    fill: green;
+    stroke: gray;
+    stroke-width: .15px;
+}
+line{
+    color: black
+}
+text{
+    font-size: 1px;
+}
+path{
+    stroke: black;
+}
+#scatterplot{
+    stroke: black;
+    stroke-width: 0.2px;
+    fill: transparent;
+}
+
+circle{
+    fill: orange
+}
+
+#linechart line{
+    stroke-width: 0.1px;
+    stroke: green;
+}
+#linechart .axis{
+    stroke-width: 0.1px;;
+    stroke: black;
+}
+#linechart path{
+    stroke-width: 00.1px;
+    stroke: green;
+}
